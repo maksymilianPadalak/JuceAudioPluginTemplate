@@ -22,9 +22,9 @@ include(${CPM_DOWNLOAD_LOCATION})
 
 # Bring in JUCE locally
 CPMAddPackage(
-    NAME juce
-    GIT_REPOSITORY https://github.com/juce-framework/JUCE.git
-    GIT_TAG origin/master
+        NAME juce
+        GIT_REPOSITORY https://github.com/juce-framework/JUCE.git
+        GIT_TAG origin/master
 )
 
 # Make sure you include any new source files here
@@ -37,7 +37,7 @@ set(SourceFiles
 
 # Change these to your own preferences
 juce_add_plugin(${PROJECT_NAME}
-        COMPANY_NAME theaudioprogrammer
+        COMPANY_NAME Padalak
         IS_SYNTH FALSE
         NEEDS_MIDI_INPUT FALSE
         NEEDS_MIDI_OUTPUT FALSE
@@ -45,10 +45,10 @@ juce_add_plugin(${PROJECT_NAME}
         EDITOR_WANTS_KEYBOARD_FOCUS FALSE
         JUCE_VST3_CAN_REPLACE_VST2 FALSE
         COPY_PLUGIN_AFTER_BUILD TRUE
-        PLUGIN_MANUFACTURER_CODE Tap1
+        PLUGIN_MANUFACTURER_CODE Pdlk
         PLUGIN_CODE Reg0
         FORMATS VST3 AU Standalone
-        PRODUCT_NAME "TapPluginTemplate"        
+        PRODUCT_NAME "Iceland Sound"
 )
 
 # How we want our SourceFiles to appear in our IDE
@@ -59,7 +59,7 @@ target_sources(${PROJECT_NAME} PRIVATE ${SourceFiles})
 
 # These are some toggleable options from the JUCE CMake API
 target_compile_definitions(${PROJECT_NAME}
-    PUBLIC
+        PUBLIC
         JUCE_WEB_BROWSER=0
         JUCE_USE_CURL=0
         JUCE_VST3_CAN_REPLACE_VST2=0
